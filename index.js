@@ -17,6 +17,7 @@ function SetFilesNeeded(needed) {
   }px`;
   const percentage =
     ((window.totalFiles - window.filesNeeded) / window.totalFiles) * 100;
+  if (isNaN(percentage)) return;
   progress.innerHTML = `${Math.ceil(percentage)}%`;
 }
 
