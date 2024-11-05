@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Krona One";
+  src: url("./public/KronaOne.ttf");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
