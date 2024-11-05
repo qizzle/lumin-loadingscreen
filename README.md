@@ -1,4 +1,4 @@
-# lumin-comlink
+# lumin-loadingscreen
 
 A minimalistic loading screen for our german Garry's Mod community called lumin.
 
