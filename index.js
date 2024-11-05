@@ -2,11 +2,14 @@ const progressBarWidth = 1477;
 const progressbar = document.getElementById("progressbar");
 const progress = document.getElementById("progress");
 
+var ignore = false;
+
 function SetFilesTotal(total) {
   window.totalFiles = total;
 }
 
 function SetFilesNeeded(needed) {
+  if (ignore) return;
   window.filesNeeded = needed;
   progressbar.style.width = `${
     ((window.totalFiles - window.filesNeeded) / window.totalFiles) *
@@ -18,6 +21,9 @@ function SetFilesNeeded(needed) {
 }
 
 function SetStatusChanged(status) {
-  progress.innerHTML = "100%";
-  progressbar.style.width = `${progressBarWidth}px`;
+  if (status == "Starting Lua...") {
+    ignore = true;
+    progress.innerHTML = "100%";
+    progressbar.style.width = `${progressBarWidth}px`;
+  }
 }
