@@ -14,5 +14,10 @@ function SetFilesNeeded(needed) {
   }px`;
   const percentage =
     ((window.totalFiles - window.filesNeeded) / window.totalFiles) * 100;
-  progress.innerHTML = `${percentage.toFixed(2)}%`;
+  progress.innerHTML = `${Math.ceil(percentage)}%`;
+}
+
+function SetStatusChanged(status) {
+  progress.innerHTML = "100%";
+  progressbar.style.width = `${progressBarWidth}px`;
 }
